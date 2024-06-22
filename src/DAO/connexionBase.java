@@ -27,5 +27,21 @@ public class connexionBase {
 			e.printStackTrace();
 		}
 	}
+	public void close() {
+		// TODO Auto-generated method stub 
+	     try {
+	            if (st != null && !st.isClosed()) {
+	                st.close();
+	            }
+	            if (COO != null && !COO.isClosed()) {
+	                COO.close();
+	            }
+	        } catch (SQLException e) {
+	            System.out.println("Erreur lors de la fermeture de la connexion : " + e.getMessage());
+	            e.printStackTrace();
+	        }
+	    }
+		
+	
 }
 
